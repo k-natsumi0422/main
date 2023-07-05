@@ -85,45 +85,49 @@ public class Qes1_13 {
 		// コンソール出力
 		System.out.println(
 				// 鈴木一郎
-				"初めまして" + name + "です" + "\n" +
+				  "初めまして" + name + "です" + "\n"
 				// 24
-				"年齢は" + age + "歳です" + "\n" +
+				+ "年齢は" + age + "歳です" + "\n" 
 				// 168.5
-				"身長は" + height + "cmです" + "\n" +
+				+ "身長は" + height + "cmです" + "\n" 
 				// 64.2
-				"体重は" + weight + "kgです" + "\n" +
+				+ "体重は" + weight + "kgです" + "\n" 
 				// オムライス
-				"好きな食べ物は" + food + "です" + "\n" +
+				+ "好きな食べ物は" + food + "です" + "\n"
 				// 22.6
-				"BMIは" + String.format("%.1f", bmi) + "です" + "\n"
+				+ "BMIは" + String.format("%.1f", bmi) + "です" + "\n"
 				);
 		
 		//問10 問8の年齢が25歳以上でtrueを表示
 		boolean age2 = (age >= 25);
 		System.out.println(age2 + "\n");
 				
-		//問11 問8の年齢・身長・体重を文字列型に型変換してコンソール出力
-		String intAge = String.valueOf(age);
-		String floatHeight = String.valueOf(height);
-		String floatWeight = String.valueOf(weight);
+		//問11 問8の年齢・身長・体重を文字列型に型変換 
+		String string_Age = String.valueOf(age);
+		String string_Height = String.valueOf(height);
+		String string_Weight = String.valueOf(weight);
 		
-		System.out.println(intAge + floatHeight + floatWeight);
+		// コンソール出力 24 168.5 64.2
+		System.out.println(string_Age + " " + string_Height + " " + string_Weight);
 		
-		//問12 問11の年齢・身長を整数型に型変換してコンソール出力
-		int nums = Integer.parseInt(intAge);
-		double nums2 = Double.parseDouble(floatHeight);
-		int nums3 = (int)nums2;
+		//問12 問11の年齢・身長を整数型に型変換
+		int int_Age = Integer.parseInt(string_Age);
+		double double_height = Double.parseDouble(string_Height);
+		int int_height = (int)double_height;
 		
+		// コンソール出力
 		System.out.println(
-				nums + "\n" +
-				nums3 + "\n"
+				// 24
+				int_Age + "\n" 
+				// 168
+				+ int_height + "\n"
 				);
 		
 		//問13 問11で年齢が25もしくは身長が160cm以上でtrueを表示
-		boolean aa = (age >= 25 || height >= 160);
-		System.out.println(aa + "\n");
+		boolean age_height = (age >= 25 || height >= 160);
+		System.out.println(age_height + "\n");
 		
-		//問9 問8変数の数値を和算で自己代入しコンソール出力
+		//問9 問8変数の数値を和算で自己代入
 		name = "鈴木一郎";
 		age += age;
 		height += height;
@@ -131,13 +135,20 @@ public class Qes1_13 {
 		food = "オムライス";
 		bmi = weight / ((height / 100) * (height / 100));
 		
+		// コンソール出力
 		System.out.println(
-			"初めまして" + name + "です" + "\n" +
-			"年齢は" + age + "歳です" + "\n" +
-			"身長は" + height + "cmです" + "\n" +
-			"体重は" + weight + "kgです" + "\n" +
-			"好きな食べ物は" + food + "です" + "\n" +
-			"BMIは" + bmi + "です" + "\n"
+			// 鈴木一郎
+			  "初めまして" + name + "です" + "\n" 
+			// 48
+			+ "年齢は" + age + "歳です" + "\n"
+			// 337.0
+			+ "身長は" + height + "cmです" + "\n" 
+			// 128.4 
+			+ "体重は" + weight + "kgです" + "\n" 
+			// オムライス
+			+ "好きな食べ物は" + food + "です" + "\n" 
+			// 11.31
+			+ "BMIは" + String.format("%.2f", bmi) + "です" + "\n"
 		);
 		
 		
