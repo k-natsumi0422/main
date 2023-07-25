@@ -7,8 +7,15 @@ public class Qes5 {
 			for(int j = 1; j <=  20 ; j++) {
 				int result = i * j;
 				String str = String.format("%03d * %03d = %03d", j ,i ,result);
-				System.out.print(str+((i < 20) ? (j== 20) ? "" : " || " : "\n")); 
+				System.out.print(str + ((i < 10) ? (j == 20) ? "" : " || " : "\n")); 
 				// 三項演算子でかく	
+				if(j == 20) {
+					System.out.print(str + "");
+				} else if (i < 10) {
+					System.out.print(str +" || ");
+				} else {
+					System.out.print(str +"\n");
+				}
 			}
 			System.out.println("");
 		}

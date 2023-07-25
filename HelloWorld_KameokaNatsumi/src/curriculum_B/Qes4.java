@@ -8,12 +8,12 @@ public class Qes4 {
 			for(int j = 1; j <=  9 ; j++) {
 				int result = i * j;
 				String str = String.format("%02d * %02d = %02d", i , j , result);
-				System.out.print(str);
-				if (j == 9) {
-                    System.out.print("");
-                } else {
-                    System.out.print(" || ");
-                }
+				System.out.print(str + ((j == 9) ? "" : " || " ));
+//				if (j == 9) {
+//                    System.out.print("");
+//                } else {
+//                    System.out.print(" || ");
+//                }
 			}
 		System.out.println("");
 		}
