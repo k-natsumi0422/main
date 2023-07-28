@@ -8,36 +8,41 @@ import java.util.Scanner;
 
 public class Qes1_3 {
 
-//	問1.2
+	//	問1.2 ユーザーネームのエラーチェック
 	public static void main(String[] args) {
+		// インスタンス化		
 		Scanner usurName = new Scanner(System.in);
-		// Listクラスのインスタンス化		
 		List<String> list1 = new ArrayList<>();
-		// 初期値		
+		
 		String name = null;
 		boolean errorFlag = false;
-			
+		
+		// ユーザーネームのバリデーション
 		do {
-			// list1の中身の消去		
-			list1.clear();
-			// 分岐に通ったときにフラグを立ててるからループの始まりでは必ずフラグを回収する必要がある			
 			errorFlag = false;
+			// list1の中身の消去
+			list1.clear();	
 			name = usurName.nextLine();
 			
+			// nullチェック　空値チェック			
 			if(Objects.isNull(name) || name.isEmpty()) {
 				list1.add("名前を入力してください");
 				errorFlag = true;
 			}
 			
+			// 10文字以上チェック
 			if(name.length() > 10) {
 				list1.add("名前を10文字以内にしてください");
 				errorFlag = true;
 			}
 			
+			// 半角英数字チェック
 			if(!name.matches("^[A-Za-z0-9]+$")) {
 				list1.add("半角英数字のみで名前を入力してください");
 				errorFlag = true;
 			}
+			
+			// チェック終了
 			list1.add("ユーザー名「" + name + "」を登録しました");
 			System.out.println(list1.get(0));
 			
@@ -45,10 +50,11 @@ public class Qes1_3 {
 		
 		
 		
-//	問3
+		//	問3 じゃんけんのシステム
+		
 		// インスタンス化		
 		Random random = new Random();
-		// 定数化	
+		
 		final String[] STR = {"グー", "チョキ", "パー"};
 		boolean gameFlag = false;
 		int count = 0;
@@ -57,21 +63,24 @@ public class Qes1_3 {
 		do {
 			gameFlag = true;
 			count ++;
-			//int randomValue = random.nextInt(2)+1; 1～2の場合の描き方	＋1が開始を表してる	
+			
+			// じゃんけんの手の宣言、出力				
 			int me = random.nextInt(3);
 			int you = random.nextInt(3);
 			System.out.println(name + "の手は「" + STR[me] + "」");
 			System.out.println("相手の手は「" + STR[you] + "」");
 			
-			
+			// 勝ち			
 			if(
 				(me == 0 && you == 1) || (me == 1 && you == 2) || (me == 2 && you == 0)) {
 				System.out.println("やるやん。\n次は俺にリベンジさせて\n");
 				gameFlag = false;
-				
+			
+			// あいこ				
 			} else if(me == you) {
 				System.out.println("DRAW あいこ もう一回しましょう！\n");
-				
+			
+			// 負け				
 			} else {
 				switch (STR[me]) {
 					case "グー":
@@ -88,63 +97,10 @@ public class Qes1_3 {
 				}
 			}
 		}while(gameFlag);
+		
 		System.out.println("勝つまでにかかった合計回数は" + count + "回です\n");
 		
+		// スキャナー閉じる	
 		usurName.close();
 	}
-	
-//	public static String judgeRps(int me , int you) {
-//		String result = ""; // 判定結果を保存する
-//
-//		switch (me) {
-//		case 0: // ユーザの手が0「グー」の場合
-//			switch (you) {
-//			case 0:// コンピュータの手が0「グー」の場合
-//				result = "DRAW あいこ もう一回しましょう！\n";
-//				break;
-//			case 1:// コンピュータの手が1「チョキ」の場合
-//				result = "やるやん。\n次は俺にリベンジさせて\n";
-//				break;
-//			case 2:// コンピュータの手が2「パー」の場合
-//				result = "俺の勝ち！\nなんで負けたか、明日まで考えといてください。\nそしたら何かが見えてくるはずです\n";
-//				break;
-//			}
-//			break;
-//		case 1: // ユーザの手が1「チョキ」の場合
-//			switch (you) {
-//			case 0:// コンピュータの手が0「グー」の場合
-//				result = "俺の勝ち！\n負けは次につながるチャンスです！\nネバーギブアップ！\n";
-//				break;
-//			case 1:// コンピュータの手が1「チョキ」の場合
-//				result = "DRAW あいこ もう一回しましょう！\\n";
-//				break;
-//			case 2:// コンピュータの手が2「パー」の場合
-//				result = "やるやん。\n次は俺にリベンジさせて\n";
-//				break;
-//			}
-//			break;
-//		case 2: // ユーザの手が2「パー」の場合
-//			switch (you) {
-//			case 0:// コンピュータの手が0「グー」の場合
-//				result = "やるやん。\n次は俺にリベンジさせて\n";
-//				break;
-//			case 1:// コンピュータの手が1「チョキ」の場合
-//				result = "俺の勝ち！\nたかがじゃんけん、そう思ってないですか？\nそれやったら次も、俺が勝ちますよ\n";
-//				break;
-//			case 2:// コンピュータの手が2「パー」の場合
-//				result = "DRAW あいこ もう一回しましょう！\n";
-//				break;
-//			}
-//			break; //ここにループの条件いれる？
-//		}
-//
-//		// 勝敗結果を返す
-//		return result;
-//	}
-//	
-//	public static void showResult(int me, int you, String result) {
-//		// 結果の表示
-//		System.out.printf("あなたの手:%s\n相手の手:%s\n", janken[me], janken[you]);
-//		System.out.printf(result);
-//	}
 }
