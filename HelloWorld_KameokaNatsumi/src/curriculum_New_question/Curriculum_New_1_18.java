@@ -1,11 +1,12 @@
 package curriculum_New_question;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Curriculum_New_1_18{
 	
 	// Q1：引数に文字列型と整数型をいれてコンソールに「Hello JavaSE 11」と出力するメソッドを作成してください。
-	static void q1(String  str, int i){
+	void q1(String  str, int i){
 		System.out.println("Hello JavaSE 11");
 	}
 	
@@ -16,11 +17,11 @@ public class Curriculum_New_1_18{
 		
 	// Q3：引数として整数の配列を渡すと、受け取った値を順番にコンソールに出力するメソッドを作成してください
 	void q3(int[] i) {
-		System.out.println(i);
+		System.out.println(Arrays.toString(i));
 	}
 			
 	// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
-	static void q2(double d , double d2) {
+	void q2(double d , double d2) {
 		System.out.println(d + d2);
 	}
 		
@@ -41,43 +42,48 @@ public class Curriculum_New_1_18{
 
 	// Q6：引数にQ5で作成したメソッドの返り値を受け取り、受け取った配列の要素の平均値をコンソールに出力するメソッドを作成してください。
 	// ※小数点以下も表示されるようにしてください。
-	double q6(int[] num) {
+	double q6(int[] nums) {
 		int sum = 0;
-		for(int i = 0; i < num.length; i++) {
-			sum += num[i];
+		for(int num : nums) {
+			sum += num;
 		}
 		
-		double avr = (double) sum / num.length;
-		System.out.println(avr);
+		double avg = (double) sum / nums.length;
+		System.out.println(avg);
 		
-		return avr;
+		return avg;
 	}
 	
 	// Q7：引数にQ6で作成したメソッドの返り値を受け取り、受け取った値が50以上ならばtrueそれ以外はfalseを返しコンソールに出力してください
-	boolean q7(int avr) {
-		if(avr >= 50) {
-			return true;
-		} else {
-			return false;
-		}
+	boolean q7(double avg) {		
+		return avg >= 50 ? true : false;
 	}
 	
 	
 	public static void main(String[] args) {
     // 作成したメソッドをここで呼び出してください
+		
+		// インスタンス化
+		Curriculum_New_1_18 c_n_118 = new Curriculum_New_1_18();
+		
+		// 引数の用意
+		int i = 3;
+		int[] num = {1, 2, 3, 4, 5};
+		
 		// Q1
-		q1(null, 0);
-		// Q2 Q4
-		q2(6 , 4);
-		q2(0.2 , 0.3);
+		c_n_118.q1(null, 0);
+		// Q2 
+		c_n_118.q2(i);
 		// Q3
-//		q3();
+		c_n_118.q3(num);
+		// Q4
+		c_n_118.q2(0.2 , 0.3);
 //		// Q5
-//		q5();
+		int[] q5 = c_n_118.q5(i);
 //		// Q6
-//		q6();
+		double q6 = c_n_118.q6(q5);
 //		// Q7
-//		q7();
+		System.out.println(c_n_118.q7(q6));
 //		
 	}
 }
