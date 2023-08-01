@@ -7,7 +7,7 @@ public class Curriculum_New_1_18{
 	
 	// Q1：引数に文字列型と整数型をいれてコンソールに「Hello JavaSE 11」と出力するメソッドを作成してください。
 	void q1(String  str, int i){
-		System.out.println("Hello JavaSE 11");
+		System.out.println(str + i);
 	}
 	
 	// Q2：引数に整数を渡すと渡した値同士を乗算しコンソールに出力するメソッドを作成してください
@@ -71,7 +71,7 @@ public class Curriculum_New_1_18{
 		int[] num = {1, 2, 3, 4, 5};
 		
 		// Q1
-		c_n_118.q1(null, 0);
+		c_n_118.q1("Hello JavaSE ", 11);
 		// Q2 
 		c_n_118.q2(i);
 		// Q3
