@@ -8,9 +8,9 @@ public class Dog {
 	public int numberOfAnimal;
 	
 	// Q3：Q1で作成した変数に「犬」を代入するコンストラクタを作成してください。
-	public Dog(String animalName) {
+	public Dog() {
 		// インスタンス変数の参照
-		this.animalName = animalName;
+		this.animalName = "犬";
 	}
 
 	// Q4：Q2で作成した変数に引数を代入するコンストラクタを作成してください。
