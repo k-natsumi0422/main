@@ -6,45 +6,48 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Handler1_25_sub extends Handler1_25_super {
+public class Status1_25_sub extends Status1_25_super {
 	public void name() {
-		Scanner usurName = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		List<String> list1 = new ArrayList<>();
 		
-		String name = null;
-		boolean errorFlag = false;
+		String name = "";
+		boolean isValid = false;
 		
 		// ユーザーネームのバリデーション
 		do {
-			errorFlag = false;
+			isValid = false;
 			// list1の中身の消去
 			list1.clear();	
-			name = usurName.nextLine();
+			name = scanner.nextLine();
 			
 			// Nullチェック 空値チェック			
 			if(Objects.isNull(name) || name.isEmpty()) {
 				list1.add("名前を入力してください");
-				errorFlag = true;
+				isValid = true;
 			}
 			
 			// 10文字以上チェック
 			if(name.length() > 10) {
 				list1.add("名前を10文字以内にしてください");
-				errorFlag = true;
+				isValid = true;
 			}
 			
 			// 半角英数字チェック
 			if(!name.matches("^[A-Za-z0-9]+$")) {
 				list1.add("半角英数字のみで名前を入力してください");
-				errorFlag = true;
+				isValid = true;
 			}
 			
 			// チェック終了
 			list1.add("こんにちは「" + name + "」さん");
 			System.out.println(list1.get(0));
 			
-		}while(errorFlag);
+		}while(isValid);
 		setName(name);
+		
+		// スキャナー閉じる
+		scanner.close();
 	}
 	
 	/**
@@ -54,10 +57,10 @@ public class Handler1_25_sub extends Handler1_25_super {
 	public void status() {
 		Random random = new Random();
 		
-		setHp(random.nextInt(1000));
-		setMp(random.nextInt(1000));
-		setPower(random.nextInt(300));
-		setSpeed(random.nextInt(300));
-		setDefence(random.nextInt(50));
+		super.setHp(random.nextInt(1000));
+		super.setMp(random.nextInt(1000));
+		super.setPower(random.nextInt(300));
+		super.setSpeed(random.nextInt(300));
+		super.setDefence(random.nextInt(50));
 	}
 }
