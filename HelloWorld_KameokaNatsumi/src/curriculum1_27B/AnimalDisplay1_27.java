@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class AnimalDisplay1_27 {
 	
-//	スキャナー split : ,いれる
-//	入力項目を配列化
-//	名前と学名　switch文
-	
 	public String[][] animalData() {
 		Scanner scanner = new Scanner(System.in);
 		
