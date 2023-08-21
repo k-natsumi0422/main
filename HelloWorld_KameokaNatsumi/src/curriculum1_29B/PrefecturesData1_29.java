@@ -3,7 +3,7 @@ package curriculum1_29B;
 import java.util.HashMap;
 
 public class PrefecturesData1_29 {
-	public void InputData(int[] input) {
+	public void InputData(Integer[] input) {
 		
 		// 都道府県データの定義
 			HashMap<Integer, String[]> prefData = new HashMap<Integer, String[]>();

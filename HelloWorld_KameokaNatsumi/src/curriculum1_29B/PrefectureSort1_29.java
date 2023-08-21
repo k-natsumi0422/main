@@ -2,29 +2,22 @@ package curriculum1_29B;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class PrefectureSort1_29 {
-	public int[] Number() {
-		Scanner scanner = new Scanner(System.in);
-	
-		System.out.println("コンソールに文字を入力してください");
-	
-		// String型からint型に変更して数字ごとに分割
-		int[] input = Stream.of(scanner.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
-		
+	public Integer[] Number(int[] input) {
 		// 昇順でソート
 		Arrays.sort(input);
+		Integer[] ascOrder = Arrays.stream(input).boxed().toArray(Integer[]::new);
 		
-		return input;
+		return ascOrder;
 	}
 	
-	public int[] Sort(int[] input) {
+	public Integer[] Sort(int[] input) {
 		// 降順でソート
-		Arrays.stream(input).boxed().sorted(Collections.reverseOrder()).toArray(Integer[]::new);
+		Integer[] descOrder = Arrays.stream(input).boxed().toArray(Integer[]::new);
+		Arrays.sort(descOrder, Collections.reverseOrder());
 		
-		return input;
+		return descOrder;
 		
 		
 	}
