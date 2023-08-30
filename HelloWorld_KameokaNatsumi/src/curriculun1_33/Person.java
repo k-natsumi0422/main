@@ -19,11 +19,13 @@ class Person{
 		this.weight = weight;
 	}
 	
+	// オーバーロード
 	public Person(String lastName) {
 		Person.count++;
 		this.lastName = lastName;
 	}
 
+	// fullNameメソッドの定義
 	public String fullName(){
 		return this.firstName + this.lastName;
 	}
