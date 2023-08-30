@@ -42,9 +42,9 @@ class Person{
 				"名前は" + this.fullName() + "です\n"
 				+ "年は" + this.age + "です\n"
 				+ "BMIは" + String.format("%.1f" , this.bmi()) + "です\n"
-		);	
+		);
 	}
-	
+
 	// printCountメソッドの定義
 	public static void printCount() {
 		System.out.println("合計" + Person.count + "人です\n");
