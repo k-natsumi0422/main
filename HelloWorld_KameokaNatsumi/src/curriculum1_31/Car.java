@@ -1,7 +1,5 @@
 package curriculum1_31;
 
-public class Car {
+public class Car extends Vehicle {
 	Vehicle vehicle = new Vehicle();
-	vehicle.getOwner();
-	vehicle.setOwner();
 }
